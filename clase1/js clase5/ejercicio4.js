@@ -48,7 +48,7 @@ function choose(){
     console.log(operaciones)
     let decision = prompt('¿Cuál de las siguientes operaciones quieres realizar?')
     switch (decision){
-        case decision.match(regsum):
+        case decision.includes(regsum):
             numberssum();
             break
         case 'resta':
