@@ -5,9 +5,9 @@ let estudiantes = [
 ]
 
 let usuarios = []
-let num = 1
+
 estudiantes.forEach(( item, index, arr ) => {
-    info =('koder'+ num++ +': '+ item);
+    info =('koder'+ (index+1) +': '+ item);
     usuarios.push(info)
 })
 
