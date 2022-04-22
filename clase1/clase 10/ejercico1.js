@@ -98,81 +98,113 @@ const mentorsArray = [
 
 
 //Empieza el ejercicio 2//
-let ivan = 0
-let alejandra= 0
-let alan = 0
-let oscar = 0
-let i4 = 0
-let signQty = mentorsArray[i4].scores.length
+function promedioPorMentor(mentorsArray){
+    let ivan = 0
+    let alejandra= 0
+    let alan = 0
+    let oscar = 0
+    let i4 = 0
+    let signQty = mentorsArray[i4].scores.length
 
-let mentProm = []
-console.log('\n- - - Ejercicio # 2 - - -');
-  mentorsArray.forEach((mentor)=>{
-      mentor.scores.forEach((calificacion)=>{
-          if (mentor.name === "Ivan"){
-            ivan += calificacion.score;
-          }
-          else if(mentor.name === "Alejandra"){
-            alejandra += calificacion.score;
-          }
-          else if(mentor.name === "Alan"){
-            alan += calificacion.score;
-          }
-          else if(mentor.name === "Oscar"){
-            oscar += calificacion.score;
-          }
-      })
-      
-  })
+    let mentProm = []
+    console.log('\n- - - Ejercicio # 2 - - -');
+    mentorsArray.forEach((mentor)=>{
+        mentor.scores.forEach((calificacion)=>{
+            if (mentor.name === "Ivan"){
+                ivan += calificacion.score;
+            }
+            else if(mentor.name === "Alejandra"){
+                alejandra += calificacion.score;
+            }
+            else if(mentor.name === "Alan"){
+                alan += calificacion.score;
+            }
+            else if(mentor.name === "Oscar"){
+                oscar += calificacion.score;
+            }
+        })
+        
+    })
 
-console.log(ivan,alejandra,alan, oscar)
-const res = {
-    ivan : ivan / signQty,
-    alejandra: alejandra/signQty,
-    alan : alan / signQty,
-    oscar: oscar / signQty,
-    
+    // console.log(ivan,alejandra,alan, oscar)
+    const res = [
+        {name: 'ivan', average: ivan / signQty},
+        {name: 'alejandra', average: alejandra/signQty},
+        {name: 'alan', average: alan / signQty},
+        {name : 'oscar', avergae:oscar / signQty},
+        
+    ]
+
+    return res
+}
+let resPromMentor = promedioPorMentor(mentorsArray)
+console.log('Los promedios de cada mentor son: ',resPromMentor)
+
+function imprimirPromediosMentores(res){
+    let mentProm = []
+    let listaRes =[res]
+    mentorsArray.forEach((mentor)=>{
+        if(mentor.name === "Ivan"){
+            mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.ivan)
+        }
+        else if(mentor.name === "Alejandra"){
+            mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.alejandra)
+        }
+        else if(mentor.name === "Alan"){
+            mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.alan)
+        }
+        else if(mentor.name === "Oscar"){
+            mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.oscar)
+        }
+    })
+    return listaRes
+}
+imprimirPromediosMentores()
+
+//solucion ejejrcico 2 en clase 11
+function getAllAvgMentors (mentors){
+    let arrayMentorsAvg=[]
+    mentors.forEach((mentor,index)=>{
+        let totalMentor = 0
+        let numSignatur = mentor.scores.length
+        mentor.scores.forEach((signature )=>{
+            totalMentor+=signature.score
+        })
+        let avgMentor = totalMentor/numSignatur
+        const newDataMentor ={
+            name: mentor.name,
+            avergae: avgMentor
+        }
+        arrayMentorsAvg.push(newDataMentor)
+    })
+    return arrayMentorsAvg
 }
 
-console.log(res)
-
-let listaRes =[res]
-mentorsArray.forEach((mentor)=>{
-    if(mentor.name === "Ivan"){
-        mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.ivan)
-    }
-    else if(mentor.name === "Alejandra"){
-        mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.alejandra)
-    }
-    else if(mentor.name === "Alan"){
-        mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.alan)
-    }
-    else if(mentor.name === "Oscar"){
-        mentProm.push('Mi nombre es : '+mentor.name+' y mi promedio es:'+res.oscar)
-    }
-})
 
 
-console.log(mentProm)
-console.log(listaRes)
+    // console.log(mentProm)
+    // console.log(listaRes)
+function mejoresMentores(){
+    let mejores=[]
 
-let mejores=[]
+    listaRes.forEach((calif)=>{
+        if (calif.ivan > 9){
+            mejores.push(res.ivan)
+        }
+        else if(calif.alejandra > 9){
+            mejores.push(res.alejandra)
+        }
+        else if(calif.alan > 9){
+            mejores.push(res.alan)
+        }
+        else if(calif.oscar > 9){
+            mejores.push(res.oscar)
+        }
+    })
+    console.log(mejores)
+}
+ 
 
-listaRes.forEach((calif)=>{
-    if (calif.ivan > 9){
-        mejores.push(res.ivan)
-    }
-    else if(calif.alejandra > 9){
-        mejores.push(res.alejandra)
-    }
-    else if(calif.alan > 9){
-        mejores.push(res.alan)
-    }
-    else if(calif.oscar > 9){
-        mejores.push(res.oscar)
-    }
-})
-console.log(mejores)
 
 
 //Empieza el ejercicio 1//
