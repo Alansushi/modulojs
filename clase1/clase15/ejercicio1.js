@@ -122,37 +122,38 @@ const koders = [
   // Obtener una coleccion de Koder que pertenezca a Javascript
   // Obtener una coleccion de Koder que pertenezca a Python
 console.log(koders)
-
-function Koder (koders ){
-        this.koders = koders;
-    
-}
-const allKodersList = new Koder(koders)
-console.log(allKodersList)
-
-// function age (allKodersList){
-    
-//     let res = allKodersList.map((persona,index,allKodersList)=>{
-//         console.log(persona.birthday)
+///////////////////////////////////////////////7
+function Koder (name, lastname, birthday,generation,bootcamp,scores ){
+        this.kodername = name;
+        this.koderLastname = lastname;
+        this.koderbirthday = birthday;
+        this.kodergeneration = generation;
+        this.koderbootcamp = bootcamp;
+        this.koderscores = scores;
         
-//     })
-//     return res
-// }
-
-// let edades = age (allKodersList)
-// console.log(edades)
-
-function avgScores (allKodersList){
-    let result = koders.reduce((accum,item)=>{
-        return [...accum+=item.scores.score] 
-    },[])
-    return result
+  
     
 }
-let promedio = avgScores (allKodersList)
-console.log(promedio)
+const koder1 = new Koder('renata','lopez', "1996/06/24",9,"JavaScript","[")
+console.log(koder1)
+
+//////////////////////////////////////////
+function newListNames (koders){
   
+  const result = koders.map((item)=>{
+    return [item]
+    
+  })
+  let listaDefinitiva = new Koder (result)
   
+
+  return listaDefinitiva
+}
+
+let newSetList= newListNames (koders)
+console.log(newSetList)
+//
+
   
   
   
