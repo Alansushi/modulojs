@@ -123,36 +123,57 @@ const koders = [
   // Obtener una coleccion de Koder que pertenezca a Python
 console.log(koders)
 ///////////////////////////////////////////////7
-function Koder (name, lastname, birthday,generation,bootcamp,scores ){
-        this.kodername = name;
-        this.koderLastname = lastname;
-        this.koderbirthday = birthday;
-        this.kodergeneration = generation;
-        this.koderbootcamp = bootcamp;
-        this.koderscores = scores;
+function calcularEdad (birthday){
+
+  const currentYear = new Date ().getFullYear();
+  const birthdayYear = birthday.split('/')[0];
+  const age = currentYear - Number(birthdayYear)
+  return age
+}
+
+
+function Koder (name, lastName,bootcamp, birthday, scores ){
+        this.name = name;
+        this.lastName = lastName;
+        this.bootcamp = bootcamp;
+        this.edad = calcularEdad(birthday);
+        this.promedio = promedio(scores);
         
   
     
 }
-const koder1 = new Koder('renata','lopez', "1996/06/24",9,"JavaScript","[")
-console.log(koder1)
-
-//////////////////////////////////////////
-function newListNames (koders){
-  
-  const result = koders.map((item)=>{
-    return [item]
+const promedio = (scores)=>{
+  const promedio = scores.reduce((accum,item)=>{
     
-  })
-  let listaDefinitiva = new Koder (result)
+      return accum += item.score;
+  },0)
   
-
-  return listaDefinitiva
+  const resuktado = promedio /scores.length
+  
+  
+  return resuktado
 }
 
-let newSetList= newListNames (koders)
-console.log(newSetList)
-//
+
+const koderListInstance = koders.map((koder)=>{
+  const{name,lastName,generation,birthday,scores} = koder;
+  const koderInstance = new Koder(name,lastName,generation,birthday,scores)
+  return koderInstance
+})
+console.log (koderListInstance)
+
+
+class Koder {
+  constructor(name){
+    this.name = name;
+  }
+  saludar(){
+    return`hola soy ${this.name}`
+  }
+}
+const koder1= new Koder ('Alanduki')
+koder1.saludar()
+
 
   
   
