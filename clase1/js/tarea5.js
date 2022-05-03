@@ -1,9 +1,9 @@
-let nombreCompleta = prompt("Ingrese sun nombre completo");
+let nombreCompleto = prompt("Ingrese su nombre completo");
 
-function contador (nombreCompleta){
-    if (count = nombreCompleta.match(/[aeiou]/gi).length);
+function contador (nombreCompleto){
+    if (count = nombreCompleto.match(/[aeiou]/gi).length);
     return count;
 }
 
-contador (nombreCompleta)
+contador (nombreCompleto)
 console.log(count)

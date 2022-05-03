@@ -171,32 +171,32 @@ console.log('Mujeres que si se vacunaron ',womenVaxxed)
 // koders.forEach((item)=>{
 //     createNode(item)
 // })
-const createHeaders =(dato)=>{
-const thNombre = document.createElement ("th");
-const thEdad = document.createElement ("th");
-const thVacunado = document.createElement ("th");
-const thGenero = document.createElement ("th");
-const tr = document.createElement("tr");
+// const createHeaders =(dato)=>{
+// const thNombre = document.createElement ("th");
+// const thEdad = document.createElement ("th");
+// const thVacunado = document.createElement ("th");
+// const thGenero = document.createElement ("th");
+// const tr = document.createElement("tr");
 
-tr.appendChild(thNombre);
-tr.appendChild(thEdad);
-tr.appendChild(thVacunado);
-tr.appendChild(thGenero);
-document.body.appendChild(table)
+// tr.appendChild(thNombre);
+// tr.appendChild(thEdad);
+// tr.appendChild(thVacunado);
+// tr.appendChild(thGenero);
+// document.body.appendChild(table)
 
-thNombre.appendChild(document.createTextNode(dato.name))
-thEdad.appendChild(document.createTextNode(dato.edad))
-thVacunado.appendChild(document.createTextNode(dato.vax))
-thGenero.appendChild(document.createTextNode(dato.gender))
-}
-const headers = (propiedades)=>{
-    propiedades.forEach((item)=>{
-        createHeaders(item)
+// thNombre.appendChild(document.createTextNode(dato.name))
+// thEdad.appendChild(document.createTextNode(dato.edad))
+// thVacunado.appendChild(document.createTextNode(dato.vax))
+// thGenero.appendChild(document.createTextNode(dato.gender))
+// }
+// const headers = (propiedades)=>{
+//     propiedades.forEach((item)=>{
+//         createHeaders(item)
         
         
-    })
-}
-headers(propiedades)
+//     })
+// }
+// headers(propiedades)
 
 
 
@@ -230,6 +230,8 @@ const createTable = (persona)=>{
 };
 
 const getInfo = (arrayPersons)=>{
+    
+    
     arrayPersons.forEach((item)=>{
         createTable(item)
         
@@ -238,8 +240,33 @@ const getInfo = (arrayPersons)=>{
 }
 getInfo(arrayPersons)
 
-document.body.appendChild(promedioEdad)
-const promedioEdad = document.createElement("p")
-promedioEdad.appendChild(avgagevaxxed)
+// document.body.appendChild(promedioEdad)
+// const promedioEdad = document.createElement("p")
+// promedioEdad.appendChild(avgagevaxxed)
+const headers(jhkashjkas,asjklsajklas,klasjklsajlas,asas)=>{
 
 
+    const table = document.createElement("table");
+    const theadGeneral= document.createElement("thead");
+    const tr = document.createElement("tr");
+    const theadName =document.createElement("th");
+    const theadAge =document.createElement("th");
+    const theadVax =document.createElement("th");
+    const theadGender =document.createElement("th")
+
+    tr.appendChild(theadName);
+    tr.appendChild(theadAge);
+    tr.appendChild(theadVax);
+    tr.appendChild(theadGender)
+    theadGeneral.appendChild(tr);
+    table.appendChild(theadGeneral)
+    document.body.appendChild(table)
+    
+
+
+    theadName= appendChild(document.createTextNode('NOMBRE'))
+    theadAge = appendChild(document.createTextNode("EDAD"))
+    theadVax = appendChild(document.createTextNode("Vacunado"))
+    theadGender = appendChild(document.createTextNode("Género"))
+}
+headers()

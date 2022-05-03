@@ -14,6 +14,7 @@ const koders = [
 // document.body.appendChild(ul)
 // console.log(ul)
 const ul = document.createElement('ul');
+
 const createNode = (name)=>{
     
     const li = document.createElement('li');
