@@ -2,6 +2,7 @@ const buttonSubmit = document.querySelector("#submit");
 const parrafo = document.querySelector('p');
 
 let arrayUsers =  []
+let deletedActivities = []
 //se puede hacer con el submit, sin embargo al revisar en el formulario hay que poner el return onsubmit para que cargue la pagina
 buttonSubmit.addEventListener("click", (event) => {
   //console.log("evento capturado")
@@ -60,6 +61,9 @@ arrayUsers.forEach((item, index) => {
   ulPerson.removeChild(liPerson)
   arrayUsers.splice(indexRemove, 1)  
   console.log(arrayUsers)
+  deletedActivities.push(spanPerson)
+  console.log(deletedActivities)
+  
 })
 
 
